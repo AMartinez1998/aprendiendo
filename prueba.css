@@ -1,0 +1,33 @@
+/*Cambiar color*/
+
+.cuadrado{
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    margin: 100px auto;
+
+    
+}
+button{
+    margin: 20px auto;
+    width: 200px;
+    height: 80px;
+    display: block;
+}
+.rojo{
+       background-color: red;
+}
+.azul{
+       background-color: blue;
+}
+
+/*Mover arriba*/
+
+.mover-arriba{
+    transform: translateY(-20px);
+    
+}
+/*mover derecha*/
+.mover-derecha{
+    transform: translateX(20px)
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="prueba.css">
+</head>
+<body>
+  
+<!--🧪 Ejercicio 1 – Cambiar color al hacer clic  -->
+
+Cambia el color de un <div> al hacer clic en un botón.
+
+<div id="caja" style="width:100px; height:100px; background:red;"></div>
+<button id="cambiarColor">Cambiar color</button>
+
+
+Tarea: Al hacer clic, el div cambia a color azul.
+
+
+
+<!--🧪 Ejercicio 2 – Agregar clase para resaltar-->
+
+Agrega una clase CSS a un elemento al pulsar un botón.
+
+<p id="texto">Texto sin resaltar</p>
+<button id="resaltar">Resaltar</button>
+
+
+Tarea: Al hacer clic, se agrega la clase .resaltado al <p>.
+
+  <!--🧪 Ejercicio 3 – Cambiar contenido-->
+
+Cambia el texto de un título al hacer clic en un botón.
+
+<h1 id="titulo">Título original</h1>
+<button id="cambiarTexto">Cambiar texto</button>
+
+
+Tarea: Al hacer clic, el contenido del <h1> cambia a “Hola, soy Jack”.
+
+  <!--🧪 Ejercicio 4 – Crear elementos dinámicamente-->
+
+Agrega nuevos elementos a una lista con un botón.
+
+<ul id="lista"></ul>
+<button id="agregar">Agregar elemento</button>
+
+
+Tarea: Al hacer clic, se añade un nuevo <li> con el texto “Hola” a la lista.
+
+  <!--🧪 Ejercicio 5 – Eliminar contenido-->
+
+Elimina el contenido de un <div> con un botón.
+
+<div id="caja">Este texto desaparecerá</div>
+<button id="eliminar">Eliminar contenido</button>
+
+
+Tarea: Al hacer clic, se borra el contenido del div.
+
+<!--🧪 Ejercicio 6 – Alternar clase-->
+
+Alterna entre dos clases para cambiar el color del elemento cada vez que se haga clic.
+
+<div id="caja" class="rojo" style="width:100px; height:100px;"></div>
+<button id="alternar">Alternar color</button>
+
+.rojo { background-color: red; }
+.verde { background-color: green; }
+
+
+Tarea: Cada clic cambia entre .rojo y .verde.
+<!--🧪 Ejercicio 7 – Contador de clics-->
+
+Crea un contador que aumenta cada vez que haces clic en un botón.
+
+<p id="contador">0</p>
+<button id="sumar">Sumar clic</button>
+
+
+Tarea: Al hacer clic, el número aumenta en 1.
+
+<!--🧪 Ejercicio 8 – Crear lista con input-->
+
+Permite al usuario escribir texto y añadirlo como un <li> en una lista.
+
+<input type="text" id="textos">
+<button id="agregars">Agregar a la lista</button>
+<ul id="listasss"></ul>
+
+
+Tarea: Al hacer clic, el texto del input se añade a la lista y el input se vacía.
+
+<!--🧪 Ejercicio 9 – Eliminar elementos con condición-->
+
+Elimina elementos de una lista solo si contienen la palabra “Borrar”.
+
+<ul id="lista">
+  <li>Hola</li>
+  <li>Borrar esto</li>
+  <li>Adiós</li>
+  <li>Borrar aquel</li>
+</ul>
+<button id="eliminar">Eliminar elementos</button>
+
+
+Tarea: Al hacer clic, desaparecen los <li> con la palabra “Borrar”.
+
+  <!--🧪 Ejercicio 10 – Cambiar estilo de varios elementos-->
+
+Cambia el estilo de todos los párrafos con una sola acción.
+
+<p class="parrafo">Texto 1</p>
+<p class="parrafo">Texto 2</p>
+<p class="parrafo">Texto 3</p>
+<button id="cambiarEstilo">Cambiar estilo</button>
+
+
+Tarea: Al hacer clic, todos los párrafos cambian a color azul y cursiva.
+
+<!--Ejercicio 1 – Lista dinámica desde un array-->
+
+Tienes un array de frutas. Crea un <ul> donde cada elemento del array se muestre como <li> al cargar la página.
+
+const frutas = ["Manzana", "Banana", "Cereza", "Naranja"];
+
+
+HTML:
+
+<ul id="listaFrutas"></ul>
+
+
+Tarea: Genera los <li> dinámicamente desde el array y añádelos a la lista.
+
+  <!--Ejercicio 2 – Tarjetas de productos-->
+
+Tienes un array de objetos con nombre y precio. Crea un contenedor <div> donde cada producto sea una tarjeta mostrando nombre y precio.
+
+const productos = [
+  { nombre: "Camiseta", precio: 20 },
+  { nombre: "Pantalón", precio: 35 },
+  { nombre: "Zapatos", precio: 50 }
+];
+
+
+HTML:
+
+<div id="contenedorProductos"></div>
+
+
+Tarea: Por cada producto, crea un <div class="producto"> con su nombre y precio dentro y agrégalo al contenedor.
+
+
+<script src="prueba.js"></script>
+</body>
+</html>
