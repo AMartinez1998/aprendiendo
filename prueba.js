@@ -127,3 +127,93 @@ productos.forEach(producto=>{
     listado.appendChild(nuevoProducto);
 
 })
+
+/*Ejercico 3*/
+const tareas = ["Hacer la cama", "Estudiar JS", "Comprar pan"];
+const tareos = document.getElementById("listaTareas");
+
+tareas.forEach(tarea => {
+    // 1️⃣ Crear el <li> y añadirle el texto
+    const nuevaTarea = document.createElement("li");
+    nuevaTarea.textContent = tarea;
+
+    // 2️⃣ Crear el botón
+    const botonEliminar = document.createElement("button");
+    botonEliminar.textContent = "Eliminar";
+
+    // 3️⃣ Añadir evento para eliminar
+    botonEliminar.addEventListener("click", () => {
+        nuevaTarea.remove(); // ✅ elimina ese <li>
+    });
+
+    // 4️⃣ Agregar el botón dentro del <li>
+    nuevaTarea.appendChild(botonEliminar);
+
+    // 5️⃣ Agregar el <li> completo a la lista
+    tareos.appendChild(nuevaTarea);
+});
+
+/*Ejercicio 4*/
+const imagenes = [
+  "https://via.placeholder.com/100",
+  "https://via.placeholder.com/120",
+  "https://via.placeholder.com/150"
+];
+
+const contenedor = document.getElementById("galeria");
+
+imagenes.forEach(imagen => {
+  const nuevaImagen = document.createElement("img");
+  nuevaImagen.src = imagen;              // 👈 aquí está el cambio clave
+  nuevaImagen.alt = "Imagen generada";   // ✅ buena práctica (texto alternativo)
+
+  contenedor.appendChild(nuevaImagen);
+});
+
+/*Ejercico 5*/
+const estudiantes = [
+  { nombre: "Ana", nota: 8 },
+  { nombre: "Luis", nota: 4 },
+  { nombre: "Marta", nota: 6 }
+];
+
+const clase = document.getElementById("estudiantes");
+
+estudiantes.forEach(estudiante => {
+  const nuevoAlumno = document.createElement("div");
+  nuevoAlumno.classList.add("alumno");
+  nuevoAlumno.style.padding = "10px";
+  nuevoAlumno.style.margin = "5px";
+  nuevoAlumno.style.color = "white";
+
+  // 🧠 Texto inicial según la nota
+  if (estudiante.nota < 5) {
+    nuevoAlumno.style.backgroundColor = "red";
+  } else {
+    nuevoAlumno.style.backgroundColor = "green";
+  }
+
+  // 📛 Nombre del estudiante
+  const nombreAlumno = document.createElement("p");
+  nombreAlumno.textContent = `${estudiante.nombre} - Nota: ${estudiante.nota}`;
+
+  // 🔘 Botón interactivo
+  const boton = document.createElement("button");
+  boton.textContent = "Cambiar estado";
+
+  // 🧠 Evento para alternar color y nota
+  boton.addEventListener("click", () => {
+    if (nuevoAlumno.style.backgroundColor === "red") {
+      nuevoAlumno.style.backgroundColor = "green";
+      boton.textContent = "Reprobar";
+    } else {
+      nuevoAlumno.style.backgroundColor = "red";
+      boton.textContent = "Aprobar";
+    }
+  });
+
+  // 🏗️ Añadir elementos al contenedor
+  nuevoAlumno.appendChild(nombreAlumno);
+  nuevoAlumno.appendChild(boton);
+  clase.appendChild(nuevoAlumno);
+});
