@@ -358,10 +358,56 @@ listes.forEach(lista =>{
     listes.remove()
   })
 
-
-
 })
 
+/*Ejercicio 6*/
+
+const nombres = ["Juan", "Ana", "Pedro", "María"];
+const listu = document.getElementById("lista");
+
+nombres.forEach(nombre => {
+  const li = document.createElement("li");
+  li.textContent = nombre;
+  listu.appendChild(li);
+
+  li.addEventListener('click',()=>{
+    li.classList.toggle('blue');
+  })
+});
+
+/*Ejercicio 7*/
+
+/* Ejercicio 7 */
+
+const tareis = ["Hacer la cama", "Estudiar JS", "Comprar pan"];
+const conte = document.getElementById("contenedortareis");
+
+tareis.forEach(tarea => {
+  // Crear el <li> dinámico
+  const li = document.createElement("li");
+  li.textContent = tarea;
+
+  // Botón eliminar
+  const btnEliminar = document.createElement("button");
+  btnEliminar.textContent = "Eliminar";
+  btnEliminar.addEventListener("click", () => {
+    li.remove(); // Ahora sí funciona
+  });
+
+  // Botón marcar como hecha
+  const btnHecho = document.createElement("button");
+  btnHecho.textContent = "✔ Hecho";
+  btnHecho.addEventListener("click", () => {
+    li.classList.toggle("sape"); // Cambia el estilo al hacer clic
+  });
+
+  // Añadir botones al li
+  li.appendChild(btnEliminar);
+  li.appendChild(btnHecho);
+
+  // Añadir el li al contenedor
+  conte.appendChild(li);
+});
 
 
 
