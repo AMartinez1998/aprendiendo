@@ -273,7 +273,7 @@ biton.addEventListener('click', () => {
     edad.value = "";
   }
 });
-/* Ejercicio 3*/
+/* Ejercicio 3 */
 
 const productes = [
   { nombre: "Camiseta", precio: 20 },
@@ -288,8 +288,83 @@ const productes = [
   { nombre: "Cinturón", precio: 25 }
 ];
 
-const filtro=document.getElementById("fltro");
-const container=document.getElementById("contenedorProductos");
+const filtro = document.getElementById("filtro");
+const container = document.getElementById("contenedorProductos");
+
+// 🔁 Función para renderizar productos
+function mostrarProductos(lista) {
+  container.innerHTML = ""; // limpiar antes
+  lista.forEach(producto => {
+    const card = document.createElement("div");
+    card.classList.add("fortu");
+    card.textContent = `${producto.nombre} - ${producto.precio}€`;
+    container.appendChild(card);
+  });
+}
+
+// 🖱️ Mostrar todos al inicio
+mostrarProductos(productos);
+
+// 📤 Filtrar mientras el usuario escribe
+filtro.addEventListener("input", () => {
+  const texto = filtro.value.toLowerCase().trim();
+
+  const filtrados = productos.filter(prod =>
+    prod.nombre.toLowerCase().includes(texto)
+  );
+
+  mostrarProductos(filtrados);
+});
+
+/*Ejercicio 4*/
+
+// Seleccionamos todas las tarjetas
+const tarjetas = document.querySelectorAll('.tarjeta');
+
+// Recorremos cada tarjeta
+tarjetas.forEach(tarjeta => {
+  const contador = tarjeta.querySelector('.contador');
+  const btnSumar = tarjeta.querySelector('.sumar');
+  const btnRestar = tarjeta.querySelector('.restar');
+
+  // Evento sumar
+  btnSumar.addEventListener('click', () => {
+    let valor = parseInt(contador.textContent);
+    contador.textContent = valor + 1;
+  });
+
+  // Evento restar
+  btnRestar.addEventListener('click', () => {
+    let valor = parseInt(contador.textContent);
+    if (valor > 0) {
+      contador.textContent = valor - 1;
+    }
+  });
+});
+
+/*Ejercicio 5*/
+
+const listes=document.getElementById("lista");
+const to=document.getElementById("eliminarTodo");
+
+listes.forEach(lista =>{
+  const btneliminar=document.querySelector('.eliminar');
+
+  btneliminar.addEventListener('click',()=>{
+    lista.remove()
+  })
+
+  to.addEventListener('click',()=>{
+    listes.remove()
+  })
+
+
+
+})
+
+
+
+
 
 
 
