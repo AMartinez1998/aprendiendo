@@ -217,3 +217,79 @@ estudiantes.forEach(estudiante => {
   nuevoAlumno.appendChild(boton);
   clase.appendChild(nuevoAlumno);
 });
+
+
+/*Ejercicio 1*/
+
+const input = document.getElementById("meter");
+const bota = document.getElementById("yatu");
+const liston = document.getElementById("liston");
+
+bota.addEventListener("click", () => {
+  const valor = input.value.trim(); // ✅ obtenemos el texto limpio
+
+  if (valor !== "") { // ✅ comprobamos que NO esté vacío
+    const nuevoLi = document.createElement("li");
+    nuevoLi.textContent = valor; // ✅ añadimos el texto
+
+    liston.appendChild(nuevoLi); // ✅ lo agregamos a la lista
+
+    input.value = ""; // ✨ limpiamos el input
+  }
+});
+/*Ejercicio 2*/
+
+/*Ejercicio 2*/
+
+const nombre = document.getElementById("nombre");
+const edad = document.getElementById("edad");
+const biton = document.getElementById("sape");
+const div = document.getElementById("sapu");
+
+biton.addEventListener('click', () => {
+  const valor = nombre.value.trim();
+  const edid = edad.value.trim();
+
+  if (valor !== "" && edid !== "") {
+    const nuevoDiv = document.createElement("div");
+    nuevoDiv.classList.add("tarjeta"); // (opcional) para estilo
+
+    // ✅ Crear elementos para nombre y edad
+    const nombreP = document.createElement("p");
+    nombreP.textContent = `Nombre: ${valor}`;
+
+    const edadP = document.createElement("p");
+    edadP.textContent = `Edad: ${edid}`;
+
+    // ✅ Agregarlos al nuevo div
+    nuevoDiv.appendChild(nombreP);
+    nuevoDiv.appendChild(edadP);
+
+    // ✅ Agregar el nuevo div al contenedor
+    div.appendChild(nuevoDiv);
+
+    // ✨ Limpiar los inputs
+    nombre.value = "";
+    edad.value = "";
+  }
+});
+/* Ejercicio 3*/
+
+const productes = [
+  { nombre: "Camiseta", precio: 20 },
+  { nombre: "Pantalón", precio: 35 },
+  { nombre: "Zapatos", precio: 50 },
+  { nombre: "Gorra", precio: 15 },
+  { nombre: "Chaqueta", precio: 60 },
+  { nombre: "Bufanda", precio: 10 },
+  { nombre: "Calcetines", precio: 5 },
+  { nombre: "Reloj", precio: 120 },
+  { nombre: "Mochila", precio: 40 },
+  { nombre: "Cinturón", precio: 25 }
+];
+
+const filtro=document.getElementById("fltro");
+const container=document.getElementById("contenedorProductos");
+
+
+
