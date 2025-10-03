@@ -409,6 +409,54 @@ tareis.forEach(tarea => {
   conte.appendChild(li);
 });
 
+/* Ejercicio 8 */
+const articulos = [
+  {
+    titulo: "Laptop Gamer",
+    descripcion: "Una laptop potente ideal para videojuegos y tareas exigentes.",
+    imagen: "https://via.placeholder.com/150"
+  },
+  {
+    titulo: "Auriculares Inalámbricos",
+    descripcion: "Disfruta de tu música sin cables con gran calidad de sonido.",
+    imagen: "https://via.placeholder.com/150"
+  },
+  {
+    titulo: "Smartwatch",
+    descripcion: "Reloj inteligente con monitor de actividad y notificaciones.",
+    imagen: "https://via.placeholder.com/150"
+  }
+];
+
+// 📦 contenedor donde meteremos las tarjetas
+const contenedore = document.getElementById("contenedorArticulos");
+
+articulos.forEach(articulo => {
+  // Crear el div de la tarjeta
+  const nuevoArticulo = document.createElement("div");
+  nuevoArticulo.classList.add("tarjeta");
+
+  // Crear imagen
+  const nuevaImagen = document.createElement("img");
+  nuevaImagen.src = articulo.imagen;
+  nuevaImagen.alt = articulo.titulo;
+
+  // Crear título
+  const nuevoTitulo = document.createElement("h3");
+  nuevoTitulo.textContent = articulo.titulo;
+
+  // Crear descripción
+  const nuevoParrafo = document.createElement("p");
+  nuevoParrafo.textContent = articulo.descripcion;
+
+  // Añadir todo al div
+  nuevoArticulo.appendChild(nuevaImagen);
+  nuevoArticulo.appendChild(nuevoTitulo);
+  nuevoArticulo.appendChild(nuevoParrafo);
+
+  // Agregar la tarjeta al contenedor principal
+  contenedore.appendChild(nuevoArticulo);
+});
 
 
 
