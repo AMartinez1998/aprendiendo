@@ -458,6 +458,25 @@ articulos.forEach(articulo => {
   contenedore.appendChild(nuevoArticulo);
 });
 
+/*Ejercicio 9*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  const botones = document.querySelectorAll(".agregar");
+  const carriton = document.getElementById("carrito");
+
+  botones.forEach(boton => {
+    boton.addEventListener("click", () => {
+      const articulo = boton.closest("article");
+      const titulo = articulo.querySelector("h2").textContent;
+
+      const nuevoProducto = document.createElement("li");
+      nuevoProducto.textContent = titulo;
+
+      carriton.appendChild(nuevoProducto);
+    });
+  });
+});
+
 
 
 
