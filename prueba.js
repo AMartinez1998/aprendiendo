@@ -477,6 +477,42 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* Ejercicio 1 – Buscador de lista en vivo*/
+
+const arrios = ["Calcetin", "Zapatillas", "Camiseta"];
+const inputo = document.getElementById("vivo");
+const paentro = document.getElementById("listonte");
+
+// Cada vez que el usuario escribe
+inputo.addEventListener("input", () => {
+  const valor = inputo.value.toLowerCase().trim();
+
+  // Limpia resultados anteriores
+  paentro.innerHTML = "";
+
+  // Filtra y muestra resultados
+  arrios.forEach(arrio => {
+    if (arrio.toLowerCase().includes(valor)) {
+      const item = document.createElement("p");
+      item.textContent = arrio;
+      paentro.appendChild(item);
+    }
+  });
+});
+
+/*Ejercicio 2 – Contador global con botones dinámicos*/
+
+const contadore=document.getElementById("contu");
+
+const boto1=document.createElement("button")
+boto1=1;
+
+const boto2=document.createElement("button")
+boto2=5;
+
+
+
+
 
 
 
