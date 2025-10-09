@@ -500,15 +500,99 @@ inputo.addEventListener("input", () => {
   });
 });
 
-/*Ejercicio 2 – Contador global con botones dinámicos*/
+/* Ejercicio 2 – Contador global con botones dinámicos */
 
-const contadore=document.getElementById("contu");
+let contadori = 0; // 👈 Inicializamos el contador
+const contadore = document.getElementById("contu");
 
-const boto1=document.createElement("button")
-boto1=1;
+// Creamos los botones
+const boto1 = document.createElement("button");
+boto1.textContent = "+1";
 
-const boto2=document.createElement("button")
-boto2=5;
+const boto2 = document.createElement("button");
+boto2.textContent = "+5";
+
+// Mostramos el contador en pantalla
+const resultado = document.createElement("p");
+resultado.textContent = `Contador: ${contadori}`;
+
+// Eventos
+boto1.addEventListener("click", () => {
+  contadori += 1;
+  resultado.textContent = `Contador: ${contadori}`;
+});
+
+boto2.addEventListener("click", () => {
+  contadori += 5;
+  resultado.textContent = `Contador: ${contadori}`;
+});
+
+// Insertamos todo en el contenedor
+contadore.appendChild(boto1);
+contadore.appendChild(boto2);
+contadore.appendChild(resultado);
+
+
+/*Ejercicio 3 – Generador de tareas con fecha*/
+
+const formu = document.getElementById("formu");
+const fercha = document.getElementById("fercha");
+const gregor = document.getElementById("gregor");
+const lien = document.getElementById("su");
+
+gregor.addEventListener('click', () => {
+  const valor = formu.value.trim();  // ✅ corregido
+  const fechi = fercha.value.trim(); // ✅ corregido
+
+  if (valor === "" || fechi === "") {
+    alert("Por favor completa todos los campos");
+    return;
+  }
+
+  const tarjeta = document.createElement("div");
+  tarjeta.textContent = `${valor} - ${fechi}`; // ✅ usamos variables reales
+
+  const botin = document.createElement("button");
+  botin.textContent = "✅ Completar";
+
+  // Opcional: cambiar el estilo al completar
+  botin.addEventListener('click', () => {
+    tarjeta.style.backgroundColor = "lightgreen";
+    botin.disabled = true;
+  });
+
+  tarjeta.appendChild(botin);
+  lien.appendChild(tarjeta); // ✅ corregido
+});
+
+/* Ejercicio 4 – Cambiar tema (modo claro/oscuro)*/
+
+// 1. Crear el botón y añadirlo a la página
+const botn = document.createElement("button");
+botn.textContent = "🌙 Cambiar tema";
+document.body.appendChild(boton);
+
+// 2. Detectar si había un tema guardado y aplicarlo
+if (localStorage.getItem("tema") === "oscuro") {
+  document.body.classList.add("oscuro");
+}
+
+// 3. Escuchar el clic y alternar el tema
+botn.addEventListener("click", () => {
+  document.body.classList.toggle("oscuro");
+
+  // 4. Guardar el estado en localStorage
+  if (document.body.classList.contains("oscuro")) {
+    localStorage.setItem("tema", "oscuro");
+  } else {
+    localStorage.setItem("tema", "claro");
+  }
+});
+
+
+
+
+
 
 
 
