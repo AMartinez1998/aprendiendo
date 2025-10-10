@@ -589,6 +589,19 @@ botn.addEventListener("click", () => {
   }
 });
 
+/*Ejercicio 5 – Lista editable*/
+
+const listen=document.createElement("ul");
+const lis=document.createElement("li");
+const bit=document.createElement("button");
+const entr=document.createElement("input")
+
+lis.textContent=`${entr} - ${bit}`
+
+bit.addEventListener('click', ()=>{
+  
+})
+
 
 
 
