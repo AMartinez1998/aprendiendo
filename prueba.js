@@ -602,6 +602,15 @@ bit.addEventListener('click', ()=>{
   
 })
 
+/*Ejercicio 6*/
+
+const prod=document.createElement("p");
+const cont=document.createElement("p");
+
+prod.forEach(pro=>{
+  
+})
+
 
 
 
